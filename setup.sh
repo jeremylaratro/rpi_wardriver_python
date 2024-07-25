@@ -7,14 +7,17 @@ else
   if [ "$shell_type" = "bash" ]; then
     echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
     echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+    echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
     source ~/.bashrc
   elif [ "$shell" = "zsh" ]; then
     echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
     echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+    echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
     source ~/.zshrc
   elif [ "$shell" = "ksh" ]; then
     echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.kshrc
     echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.kshrc
+    echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.kshrc
     source ~/.kshrc
   else
     echo 'issue detecting shell. add manually.'
